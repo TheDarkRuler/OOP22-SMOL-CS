@@ -1,0 +1,68 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net7.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\farin\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj",
+      "projectName": "SMOL_GameHitBox",
+      "projectPath": "C:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj",
+      "packagesPath": "C:\\Users\\farin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\SMOL_GameHitBox\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\farin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
