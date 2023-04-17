@@ -6,14 +6,7 @@ public interface IHitBox
      * returns the center of the shape.
      * @return center
      */
-    Point2D GetCenter();
-
-    /**
-     * sets the center of the shape with the new parameter.
-     * @param newCenter
-     */
-    void SetCenter(Point2D newCenter);
-
+    Point2D Center { get; set; }
     /**
      * generic isColliding to make the others work.
      * @param hitBox
