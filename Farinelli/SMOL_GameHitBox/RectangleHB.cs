@@ -1,10 +1,9 @@
-namespace SMOL_GameHitBox;
-
+namespace GameHitBox;
 public class RectangleHB : IHitBox
 {
-    private Point2D _center { get; set; }
-    private double _width { get; }
-    private double _height { get; }
+    private Point2D _center;
+    private double _width;
+    private double _height;
     public RectangleHB(Point2D center, double width, double height)
     {
         _center = center;

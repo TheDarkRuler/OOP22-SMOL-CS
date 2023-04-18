@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Drawer2\\OOP\\Progettone\\C#\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj": {}
+    "c:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj": {}
   },
   "projects": {
-    "C:\\Drawer2\\OOP\\Progettone\\C#\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj": {
+    "c:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Drawer2\\OOP\\Progettone\\C#\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj",
+        "projectUniqueName": "c:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj",
         "projectName": "SMOL_GameHitBox",
-        "projectPath": "C:\\Drawer2\\OOP\\Progettone\\C#\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj",
-        "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-        "outputPath": "C:\\Drawer2\\OOP\\Progettone\\C#\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\obj\\",
+        "projectPath": "c:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj",
+        "packagesPath": "C:\\Users\\farin\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marco\\AppData\\Roaming\\NuGet\\NuGet.Config"
