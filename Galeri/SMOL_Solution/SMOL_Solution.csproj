@@ -17,4 +17,12 @@
         <PackageReference Include="coverlet.collector" Version="3.1.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include=".idea\.idea.Galeri.dir\.idea\.gitignore" />
+      <Content Include=".idea\.idea.Galeri.dir\.idea\indexLayout.xml" />
+      <Content Include=".idea\.idea.Galeri.dir\.idea\projectSettingsUpdater.xml" />
+      <Content Include=".idea\.idea.Galeri.dir\.idea\vcs.xml" />
+      <Content Include=".idea\.idea.Galeri.dir\.idea\workspace.xml" />
+    </ItemGroup>
+
 </Project>
