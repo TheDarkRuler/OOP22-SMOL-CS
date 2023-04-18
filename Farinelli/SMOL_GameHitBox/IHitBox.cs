@@ -1,4 +1,4 @@
-namespace SMOL_GameHitBox;
+namespace GameHitBox;
 
 public interface IHitBox
 {
