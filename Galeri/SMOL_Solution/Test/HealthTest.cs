@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace SMOL_Solution;
+namespace SMOL_Solution.Test;
 
 public class HealthTest
 {
