@@ -1,5 +1,4 @@
-namespace GameState;
-
+namespace MySpace;
 public interface IGameState
 {
     bool IsGameOver();

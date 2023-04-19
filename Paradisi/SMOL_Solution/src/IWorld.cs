@@ -1,7 +1,6 @@
+namespace MySpace;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-
-namespace GameState;
 
 public interface IWorld
 {   

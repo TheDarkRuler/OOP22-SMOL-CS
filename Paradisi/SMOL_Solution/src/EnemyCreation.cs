@@ -1,8 +1,8 @@
-namespace GameState;
+namespace MySpace;
+
 using System.Timers;
 using System.Collections.Generic;
 using System;
-
 class EnemyCreation
 {
     /** Default spawn rate for basic enemy. */

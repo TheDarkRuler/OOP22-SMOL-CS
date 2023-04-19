@@ -1,5 +1,4 @@
-namespace GameState;
-
+namespace MySpace;
 public interface IEntity
 {
 }

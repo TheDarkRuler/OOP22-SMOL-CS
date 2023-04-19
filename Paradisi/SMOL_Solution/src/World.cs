@@ -1,12 +1,17 @@
+namespace MySpace;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace GameState;
-
 class World : IWorld
 {
-    private List<IEntity> _entities = new List<IEntity>();
-    private int _score = 0;
+    private List<IEntity> _entities;
+    private int _score;
+
+    public World()
+    {
+        _entities = new List<IEntity>();
+        _score = 0;
+    }
 
     public void AddEntity(IEntity thisEntity)
     {
