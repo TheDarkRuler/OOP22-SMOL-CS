@@ -1,0 +1,12 @@
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/bin/Debug/net6.0/SMOL.deps.json
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/bin/Debug/net6.0/SMOL.dll
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/bin/Debug/net6.0/ref/SMOL.dll
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/bin/Debug/net6.0/SMOL.pdb
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/obj/Debug/net6.0/SMOL.csproj.AssemblyReference.cache
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/obj/Debug/net6.0/SMOL.GeneratedMSBuildEditorConfig.editorconfig
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/obj/Debug/net6.0/SMOL.AssemblyInfoInputs.cache
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/obj/Debug/net6.0/SMOL.AssemblyInfo.cs
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/obj/Debug/net6.0/SMOL.csproj.CoreCompileInputs.cache
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/obj/Debug/net6.0/SMOL.dll
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/obj/Debug/net6.0/ref/SMOL.dll
+/home/muni106/Documents/uni/primo_semestre/oop/OOP22-SMOL-CS/Samite/SMOL/obj/Debug/net6.0/SMOL.pdb
