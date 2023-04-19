@@ -1,29 +1,21 @@
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 
-namespace SMOL_Solution;
+namespace GameState;
 
 class World : IWorld
 {
+    private List<IEntity> _entities = new List<IEntity>();
     private int _score = 0;
 
     public void AddEntity(IEntity thisEntity)
     {
-        throw new NotImplementedException();
+        _entities.Add(thisEntity);
     }
 
     public ConcurrentQueue<IEntity> GetEntities()
     {
-        throw new NotImplementedException();
-    }
-
-    public List<IEntity> GetLifePlants()
-    {
-        throw new NotImplementedException();
-    }
-
-    public IEntity GetPlayer()
-    {
-        throw new NotImplementedException();
+        return new ConcurrentQueue<IEntity>(_entities);
     }
 
     public int GetScore() => _score;
@@ -35,6 +27,6 @@ class World : IWorld
 
     public void Remove(IEntity thisEntity)
     {
-        throw new NotImplementedException();
+        _entities.Remove(thisEntity);
     }
 }

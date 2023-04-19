@@ -1,16 +1,5 @@
-using System.Drawing;
-
-namespace SMOL_Solution;
+namespace GameState;
 
 public interface IEntity
 {
-    Type GetType();
-    
-    HealthComponent? GetHealthComp();
-    
-    InputComponent? GetInputComp();
-    
-    PhysicsComponent? GetPhysicsComp();
-    
-    GraphicComponent? GetGraphicComp();
 }

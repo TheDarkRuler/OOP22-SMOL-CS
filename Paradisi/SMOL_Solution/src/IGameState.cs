@@ -1,4 +1,4 @@
-namespace SMOL_Solution;
+namespace GameState;
 
 public interface IGameState
 {

@@ -1,13 +1,10 @@
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 
-namespace SMOL_Solution;
+namespace GameState;
 
 public interface IWorld
 {   
-    IEntity GetPlayer();
-
-    List<IEntity> GetLifePlants();
-
     ConcurrentQueue<IEntity> GetEntities();
     
     void Remove(IEntity thisEntity);
