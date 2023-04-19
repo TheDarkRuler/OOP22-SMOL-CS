@@ -1,30 +1,34 @@
 namespace GameHitBox;
 
+///<summary>
+///Interface for the creation of different hitboxes.
+///</summary>
 public interface IHitBox
 {
-    /**
-     * returns the center of the shape.
-     * @return center
-     */
+    ///<summary>
+    ///Gets the center of the shape
+    ///<summary>
+    ///<value> The new center of the shape. </value>
     Point2D Center { get; set; }
-    /**
-     * generic isColliding to make the others work.
-     * @param hitBox
-     * @return if the shapes are colliding
-     */
+
+    ///<summary>
+    ///Generic isColliding to make the others work.
+    ///</summary>
+    ///<param name = "hitBox"> </param>
+    ///<returns> Return if the shapes are colliding </returns>
     bool IsColliding(IHitBox hitBox);
 
-    /**
-     * checks if the shapes are colliding.
-     * @param circle
-     * @return if the two shapes are colliding
-     */
+    ///<summary> 
+    ///Checks if the shapes are colliding.
+    ///</summary>
+    ///<param name = "circle"> </param>
+    ///<returns> Return if the two shapes are colliding </returns>
     bool IsColliding(CircleHB circle);
 
-    /**
-     * checks if the two shapes are colliding.
-     * @param rectangle
-     * @return if the two shapes are colliding
-     */
+    ///<summary>
+    ///Checks if the two shapes are colliding.
+    ///</summary>
+    ///<param name = "rectangle"> </param>
+    ///<returns> Return if the two shapes are colliding </returns>
     bool IsColliding(RectangleHB rectangle);
 }
