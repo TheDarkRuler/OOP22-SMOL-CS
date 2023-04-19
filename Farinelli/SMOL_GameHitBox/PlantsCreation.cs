@@ -1,7 +1,12 @@
 namespace PlantsCreation;
 using GameHitBox;
+
+///<summary>
+///Create the plats on a logical map in few different locations.
+///</summary>
 public class PlantsCreation
 {
+    //Imitation of the constants used in the java version
     const int numPlants = 4;
     const double plantHeight = 160;
     const double plantWidth = 160;
@@ -10,9 +15,13 @@ public class PlantsCreation
     const double borderHeight = 112.5;
     const double mapHeight = 787.5;
     private bool _validPosition;
+    //imitation of the list of entities.
     private List<Point2D> _entities;
     private readonly Random _rand;
 
+    ///<summary>
+    ///Constructor that initialize the entites list, random and start the creation of the plants.
+    ///</summary>
     public PlantsCreation()
     {
         _entities = new List<Point2D>();
