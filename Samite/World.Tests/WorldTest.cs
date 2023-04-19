@@ -5,6 +5,7 @@ namespace World.Tests;
 
 public class WorldTest
 {
+
     [Fact]
     public void EmptyWorldTesting()
     {
@@ -47,5 +48,17 @@ public class WorldTest
     public void PlantTesting()
     {
         IWorld world = new WorldImpl();
+        var plant1 = new EntityImpl(EntityType.Health);
+        var plant2 = new EntityImpl(EntityType.Health);
+        var plant3 = new EntityImpl(EntityType.Health);
+        var plant4 = new EntityImpl(EntityType.Health);
+        world.AddEntity(plant1);
+        world.AddEntity(plant2);
+        world.AddEntity(plant3);
+        world.AddEntity(plant4);
+        foreach (var lifePlant in world.GetLifePlants())
+        {
+            Assert.Contains(lifePlant, world.OccupiedPlants().Keys);
+        }
     }
 }

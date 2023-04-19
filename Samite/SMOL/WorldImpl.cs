@@ -7,13 +7,12 @@ public class WorldImpl : IWorld
     private const bool Occupied = true;
     private const bool Free = false;
     private LinkedList<IEntity> Entities { get; }
-    private Dictionary<IEntity, bool> _occupiedPlants;
-    private KeyInputs? _keyInputs = null;
+    private Dictionary<IEntity, bool> OccPlants { get; }
     private int _score;
     public WorldImpl()
     {
         Entities = new LinkedList<IEntity>();
-        this._occupiedPlants = new Dictionary<IEntity, bool>();
+        this.OccPlants = new Dictionary<IEntity, bool>();
         _score = 0;
     }
 
@@ -47,11 +46,6 @@ public class WorldImpl : IWorld
         return _score;
     }
 
-    public void UpdateWorld()
-    {
-        throw new NotImplementedException();
-    }
-
     public void AddEntity(IEntity thisEntity)
     {
         Entities.AddFirst(thisEntity);
@@ -62,56 +56,46 @@ public class WorldImpl : IWorld
         _score = _score + quantity;
     }
 
-    public Dictionary<IEntity, bool> OccupiedPlants(IEntity plant)
+    public Dictionary<IEntity, bool> OccupiedPlants()
     {
         UpdateLifePlants();
-        return new Dictionary<IEntity, bool>(this._occupiedPlants);
+        return new Dictionary<IEntity, bool>(this.OccPlants);
     }
 
     private void UpdateLifePlants()
     {
         foreach (var lifePlant in GetLifePlants())
         {
-            _occupiedPlants.TryAdd(lifePlant, Free);
+            OccPlants.TryAdd(lifePlant, Free);
         }
         CheckRemoved();
     }
 
     private void CheckRemoved()
     {
-        foreach (var lifePlant in _occupiedPlants.Keys)
+        foreach (var lifePlant in OccPlants.Keys)
         {
             if (!GetLifePlants().Contains(lifePlant))
             {
-                _occupiedPlants.Remove(lifePlant);
+                OccPlants.Remove(lifePlant);
             }
         }
     }
     public void SetPlantFree(IEntity plant)
     {
         UpdateLifePlants();
-        if (_occupiedPlants.ContainsKey(plant))
+        if (OccPlants.ContainsKey(plant))
         {
-            _occupiedPlants.Add(plant,Free);
+            OccPlants.Add(plant,Free);
         }
     }
 
     public void SetPlantOccupied(IEntity plant)
     {
         UpdateLifePlants();
-        if (_occupiedPlants.ContainsKey(plant))
+        if (OccPlants.ContainsKey(plant))
         {
-            _occupiedPlants.Add(plant,Occupied);
+            OccPlants.Add(plant,Occupied);
         }
-    }
-
-    public KeyInputs GetKeyInputs()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void SetInputs(KeyInputs keyInputs)
-    {
-        throw new NotImplementedException();
     }
 }

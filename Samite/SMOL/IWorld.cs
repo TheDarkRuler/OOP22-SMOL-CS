@@ -15,21 +15,15 @@ public interface IWorld
     void Remove(IEntity thisEntity);
     
     int GetScore();
-    
-    void UpdateWorld();
-    
+
     void AddEntity(IEntity thisEntity);
     
     void IncScore(int quantity);
     
-    Dictionary<IEntity, bool> OccupiedPlants(IEntity plant);
+    Dictionary<IEntity, bool> OccupiedPlants();
     
     void SetPlantFree(IEntity plant);
     
     void SetPlantOccupied(IEntity plant);
 
-    KeyInputs GetKeyInputs();
-
-    void SetInputs(KeyInputs keyInputs);
-    
 }

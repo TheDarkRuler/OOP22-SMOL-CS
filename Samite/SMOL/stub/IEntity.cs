@@ -9,4 +9,5 @@ public interface IEntity
     void SetX(double x);
     void SetY(double y);
     EntityType GetType();
+    HealthComponent GetHealthComponent();
 }
