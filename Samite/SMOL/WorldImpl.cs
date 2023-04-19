@@ -1,37 +1,50 @@
 using System.Collections.Concurrent;
-
+using smol.stub;
 namespace smol;
 
 public class WorldImpl : IWorld
 {
+    private const bool Occupied = true;
+    private const bool Free = false;
+    private LinkedList<IEntity> Entities { get; }
+    private Dictionary<IEntity, bool> _occupiedPlants;
+    private KeyInputs? _keyInputs = null;
+    private int _score;
+    public WorldImpl()
+    {
+        Entities = new LinkedList<IEntity>();
+        this._occupiedPlants = new Dictionary<IEntity, bool>();
+        _score = 0;
+    }
+
     public List<IEntity> GetMoles()
     {
-        throw new NotImplementedException();
+        return Entities.Where(entity => entity.GetType().Equals(EntityType.Enemy)).ToList();
     }
 
     public IEntity GetPlayer()
     {
-        throw new NotImplementedException();
+        return Entities.First(entity => entity.GetType().Equals(EntityType.Player));
     }
 
     public List<IEntity> GetLifePlants()
     {
-        throw new NotImplementedException();
+        return Entities.Where(entity => entity.GetType().Equals(EntityType.Health)).ToList();
     }
 
-    public ConcurrentQueue<IEntity> GetEntities()
+    public LinkedList<IEntity> GetEntities()
     {
-        throw new NotImplementedException();
+        return Entities;
     }
 
     public void Remove(IEntity thisEntity)
     {
-        throw new NotImplementedException();
+        Entities.Remove(thisEntity);
     }
 
     public int GetScore()
     {
-        throw new NotImplementedException();
+        return _score;
     }
 
     public void UpdateWorld()
@@ -41,27 +54,55 @@ public class WorldImpl : IWorld
 
     public void AddEntity(IEntity thisEntity)
     {
-        throw new NotImplementedException();
+        Entities.AddFirst(thisEntity);
     }
 
     public void IncScore(int quantity)
     {
-        throw new NotImplementedException();
+        _score = _score + quantity;
     }
 
     public Dictionary<IEntity, bool> OccupiedPlants(IEntity plant)
     {
-        throw new NotImplementedException();
+        UpdateLifePlants();
+        return new Dictionary<IEntity, bool>(this._occupiedPlants);
     }
 
+    private void UpdateLifePlants()
+    {
+        foreach (var lifePlant in GetLifePlants())
+        {
+            _occupiedPlants.TryAdd(lifePlant, Free);
+        }
+        CheckRemoved();
+    }
+
+    private void CheckRemoved()
+    {
+        foreach (var lifePlant in _occupiedPlants.Keys)
+        {
+            if (!GetLifePlants().Contains(lifePlant))
+            {
+                _occupiedPlants.Remove(lifePlant);
+            }
+        }
+    }
     public void SetPlantFree(IEntity plant)
     {
-        throw new NotImplementedException();
+        UpdateLifePlants();
+        if (_occupiedPlants.ContainsKey(plant))
+        {
+            _occupiedPlants.Add(plant,Free);
+        }
     }
 
     public void SetPlantOccupied(IEntity plant)
     {
-        throw new NotImplementedException();
+        UpdateLifePlants();
+        if (_occupiedPlants.ContainsKey(plant))
+        {
+            _occupiedPlants.Add(plant,Occupied);
+        }
     }
 
     public KeyInputs GetKeyInputs()

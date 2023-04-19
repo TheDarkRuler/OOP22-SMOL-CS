@@ -1,11 +1,12 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2bfc6eb5_002Dd8e9_002D41b1_002Db5d0_002D5e4edf9fe113/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2bfc6eb5_002Dd8e9_002D41b1_002Db5d0_002D5e4edf9fe113/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1 #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::CE07BF5C-853E-45A9-90AA-12399590D6F8::net6.0::World.Tests.UnitTest1.Test1&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::CE07BF5C-853E-45A9-90AA-12399590D6F8::net6.0::World.Tests.WorldTest.EmptyWorldTesting&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::CE07BF5C-853E-45A9-90AA-12399590D6F8::net6.0::World.Tests.WorldTest.SimpleWorldTesting&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=41f401ae_002D79be_002D4e98_002D9cb4_002D1e25c7288480/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=41f401ae_002D79be_002D4e98_002D9cb4_002D1e25c7288480/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::CE07BF5C-853E-45A9-90AA-12399590D6F8::net6.0::World.Tests.UnitTest1.Test1&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::CE07BF5C-853E-45A9-90AA-12399590D6F8::net6.0::World.Tests.WorldTest.SimpleWorldTesting&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

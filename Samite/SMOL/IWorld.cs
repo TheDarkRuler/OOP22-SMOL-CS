@@ -1,5 +1,5 @@
 using System.Collections.Concurrent;
-
+using smol.stub;
 namespace smol;
 
 public interface IWorld
@@ -10,7 +10,7 @@ public interface IWorld
     
     List<IEntity> GetLifePlants();
     
-    ConcurrentQueue<IEntity> GetEntities();
+    LinkedList<IEntity> GetEntities();
     
     void Remove(IEntity thisEntity);
     

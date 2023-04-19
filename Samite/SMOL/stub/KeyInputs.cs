@@ -1,4 +1,4 @@
-namespace smol;
+namespace smol.stub;
 
 public class KeyInputs 
 {
