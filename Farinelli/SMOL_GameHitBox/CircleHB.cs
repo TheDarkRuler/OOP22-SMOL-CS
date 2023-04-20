@@ -12,8 +12,8 @@ public class CircleHB : IHitBox
     ///<summary>
     ///Sets the center and the radius of the HitBox.
     ///</summary>
-    ///<param name = "center"> The center of the hitbox </param>
-    ///<param name = "radius"> Radius of the hitbox </param>
+    ///<param name = "center"> The center of the hitbox. </param>
+    ///<param name = "radius"> Radius of the hitbox. </param>
     public CircleHB(Point2D center, double radius) 
     {
         _center = center;

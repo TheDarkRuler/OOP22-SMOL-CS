@@ -1,18 +1,28 @@
 namespace SMOL_GameHitBoxTest;
 using GameHitBox;
+
+///<summary>
+///Test class that checks that the collisions between shapes work.
+///</summary>
 public class HitBoxTest
 {
     private IHitBox _circleHitBox;
     private IHitBox _rectangleHitBox;
     private IHitBox? _misplacedCircleHitBox;
     private IHitBox? _misplacedRectangleHitBox;
+
+    ///<summary>
+    ///Constructor that is runned every time before each method.
+    ///</summary>
     public HitBoxTest()
     {
         _rectangleHitBox = new RectangleHB(new Point2D(0,0), 1, 1);
         _circleHitBox = new CircleHB(new Point2D(0,0), 1);
     }
 
-
+    ///<summary>
+    ///Tests if the rectangle-rectangle collision works correctly.
+    ///</summary>
     [Fact]
     public void RectangleHitBoxTest()
     {
@@ -23,6 +33,10 @@ public class HitBoxTest
         Assert.True(_rectangleHitBox.IsColliding(_misplacedRectangleHitBox));
 
     }
+
+    ///<summary>
+    ///Tests if the circle-circle collision works correctly.
+    ///</summary>
     [Fact]
     public void CircleHitBoxTest()
     {
@@ -32,6 +46,10 @@ public class HitBoxTest
         _misplacedCircleHitBox.Center = new Point2D(1.9, 0);
         Assert.True(_circleHitBox.IsColliding(_misplacedCircleHitBox));
     }
+
+    ///<summary>
+    ///Tests if the rectangle-circle collision works correctly.
+    ///</summary>
     [Fact]
     public void BothHitBoxTest()
     {

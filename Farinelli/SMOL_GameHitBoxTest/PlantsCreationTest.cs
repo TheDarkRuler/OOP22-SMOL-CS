@@ -2,8 +2,16 @@ namespace SMOL_PlantsCreationTest;
 using PlantsCreation;
 using GameHitBox;
 
+///<summary>
+///Test class that tests if the PlantsCreation class creates correctly the right number of plants and none of them
+///collide with eachother.
+///</summary>
 public class PlantsCreationTest
 {
+
+    ///<summary>
+    ///Tests if the right number of plants are created and they do not collide.
+    ///</summary>
     [Fact]
     public void CreationTest()
     {

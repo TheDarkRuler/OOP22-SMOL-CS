@@ -18,21 +18,18 @@ public class Point2D
     }
 
     ///<summary>
-    ///
+    ///Gets the position on the x axis.
     ///</summary>
-    ///<returns> Gets the position on the x axis </returns>
     public double X => _x;
 
     ///<summary>
-    ///
+    ///Gets the position on the y axis.
     ///</summary>
-    ///<returns> Gets the position on the y axis </returns>
     public double Y => _y;
 
     ///<summary>
-    ///
+    ///The distance between two Poitns.
     ///</summary>
-    ///<returns> The distance between two Poitns </returns>
     public double Distance(Point2D temp) => Math.Sqrt(Math.Pow(Math.Abs(_x - temp.X), 2) 
         + Math.Pow(Math.Abs(_y - temp.Y), 2));
 }

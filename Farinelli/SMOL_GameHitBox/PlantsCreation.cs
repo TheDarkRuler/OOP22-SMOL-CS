@@ -6,14 +6,14 @@ using GameHitBox;
 ///</summary>
 public class PlantsCreation
 {
-    //Imitation of the constants used in the java version
-    const int numPlants = 4;
-    const double plantHeight = 160;
-    const double plantWidth = 160;
-    const double borderWidth = 100;
-    const double mapWidth = 1500;
-    const double borderHeight = 112.5;
-    const double mapHeight = 787.5;
+    //Imitation of the constants used in the java version.
+    private const int numPlants = 4;
+    private const double plantHeight = 160;
+    private const double plantWidth = 160;
+    private const double borderWidth = 100;
+    private const double mapWidth = 1500;
+    private const double borderHeight = 112.5;
+    private const double mapHeight = 787.5;
     private bool _validPosition;
     //imitation of the list of entities.
     private List<Point2D> _entities;
@@ -29,12 +29,27 @@ public class PlantsCreation
         CreatePlants();
     }
 
+    ///<summary>
+    ///Gets the list of entities, in this case there will be only plants.
+    ///</summary>
     public List<Point2D> Entities => _entities;
 
+    ///<summary>
+    ///Gets the width of the plants.
+    ///</summary>
     public double PlantWidth => plantWidth;
+
+    ///<summary>
+    ///Gets the height of the plants.
+    ///</summary>
     public double PlantHeight => plantHeight;
+
+    ///<summary>
+    ///Gets the number of platns.
+    ///</summary>
     public double NumPlants => numPlants;
 
+    //Generates a specific number of plants in different places on the screen.
     private void CreatePlants()
     {
         for (int i = 0; i < numPlants; i++)
@@ -67,6 +82,7 @@ public class PlantsCreation
         }
     }
 
+    //Finds the position where the plant will generate, checking that it does not create on another entity.
     private Point2D? FindPosition(int i)
     {
         switch (i)

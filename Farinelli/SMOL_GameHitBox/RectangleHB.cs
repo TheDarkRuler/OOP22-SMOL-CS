@@ -12,9 +12,9 @@ public class RectangleHB : IHitBox
     ///<summary>
     ///Constructor that sets the dimension and location of the hitbox.
     ///</summary>
-    ///<param name = "center"> The center of the hitbox </param>
-    ///<param name = "width"> The width of the hitbox </param>
-    ///<param name = "height"> The height of the hitbox </param>
+    ///<param name = "center"> The center of the hitbox. </param>
+    ///<param name = "width"> The width of the hitbox. </param>
+    ///<param name = "height"> The height of the hitbox. </param>
     public RectangleHB(Point2D center, double width, double height)
     {
         _center = center;
@@ -22,12 +22,12 @@ public class RectangleHB : IHitBox
         _width = width;
     }
     ///<summary>
-    ///Get the width of the hitbox
+    ///Get the width of the hitbox.
     ///</summary>
     public double Width => _width;
 
     ///<summary>
-    ///Get the height of the hitbox
+    ///Get the height of the hitbox.
     ///</summary>
     public double Height => _height;
 
