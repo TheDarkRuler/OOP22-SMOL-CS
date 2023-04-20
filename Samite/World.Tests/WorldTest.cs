@@ -3,6 +3,9 @@ using smol;
 using smol.stub;
 namespace World.Tests;
 
+/// <summary>
+/// Tests for the World. 
+/// </summary>
 public class WorldTest
 {
 
@@ -19,9 +22,9 @@ public class WorldTest
     public void SimpleWorldTesting()
     {
         IWorld world = new WorldImpl();
-        var plant = new EntityImpl(EntityType.Health);
-        var player = new EntityImpl(EntityType.Player);
-        var mole = new EntityImpl(EntityType.Enemy);
+        var plant = new EntityImpl(EntityType.Health, new HealthComponent());
+        var player = new EntityImpl(EntityType.Player, null);
+        var mole = new EntityImpl(EntityType.Enemy, null);
         world.IncScore(100);
         world.AddEntity(player);
         world.AddEntity(plant);
@@ -48,10 +51,10 @@ public class WorldTest
     public void PlantTesting()
     {
         IWorld world = new WorldImpl();
-        var plant1 = new EntityImpl(EntityType.Health);
-        var plant2 = new EntityImpl(EntityType.Health);
-        var plant3 = new EntityImpl(EntityType.Health);
-        var plant4 = new EntityImpl(EntityType.Health);
+        var plant1 = new EntityImpl(EntityType.Health, new HealthComponent());
+        var plant2 = new EntityImpl(EntityType.Health, new HealthComponent());
+        var plant3 = new EntityImpl(EntityType.Health, new HealthComponent());
+        var plant4 = new EntityImpl(EntityType.Health, new HealthComponent());
         world.AddEntity(plant1);
         world.AddEntity(plant2);
         world.AddEntity(plant3);

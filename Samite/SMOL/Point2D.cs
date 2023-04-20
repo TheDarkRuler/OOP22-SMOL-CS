@@ -1,9 +1,12 @@
 namespace smol;
 
+/// <summary>
+/// Rewriting of the javafx class Point2D 
+/// </summary>
 public class Point2D
 {
-    public double X { get; }
-    public double Y { get; }
+    private double X { get; }
+    private double Y { get; }
 
     public Point2D(double x, double y)
     {
