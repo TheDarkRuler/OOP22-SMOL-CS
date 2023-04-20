@@ -8,5 +8,5 @@ public class Entity
         _entityType = type;
     }
 
-    public Type GetType() => _entityType;
+    public new Type GetType() => _entityType;
 }
