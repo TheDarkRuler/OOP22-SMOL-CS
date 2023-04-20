@@ -1,23 +1,25 @@
 namespace MySpace;
 public class GameState : IGameState
 {
-    private IWorld _world;
-    private IEntity p;
-
-    public GameState()
+    private World _world;
+    public GameState(World w)
     {
-        _world = new World();
+        _world = w;
     }
 
     public int GetScore() => _world.GetScore();
-
     public void InitGame()
     {
-        _world.AddEntity(p);
+        _world.AddEntity(new Entity(Type.HEALTH));
+        _world.AddEntity(new Entity(Type.PLAYER));
+        _world.AddEntity(new Entity(Type.WALL));
+        _world.AddEntity(new Entity(Type.WEAPON));
     }
 
     public bool IsGameOver()
     {
-        return false;
+        return !_world.GetEntities().Where(e => e.GetType() == Type.HEALTH).Any();
     }
+
+    public World GetWorld() => _world;
 }

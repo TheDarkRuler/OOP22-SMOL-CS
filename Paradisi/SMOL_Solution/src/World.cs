@@ -2,35 +2,35 @@ namespace MySpace;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-class World : IWorld
+public class World : IWorld
 {
-    private List<IEntity> _entities;
+    private List<Entity> _entities;
     private int _score;
 
     public World()
     {
-        _entities = new List<IEntity>();
+        _entities = new List<Entity>();
         _score = 0;
     }
 
-    public void AddEntity(IEntity thisEntity)
+    public void AddEntity(Entity thisEntity)
     {
         _entities.Add(thisEntity);
     }
 
-    public ConcurrentQueue<IEntity> GetEntities()
+    public ConcurrentQueue<Entity> GetEntities()
     {
-        return new ConcurrentQueue<IEntity>(_entities);
+        return new ConcurrentQueue<Entity>(_entities);
     }
 
     public int GetScore() => _score;
 
     public void IncScore(int quantity)
     {
-        _score += quantity;
+        _score = _score + quantity;
     }
 
-    public void Remove(IEntity thisEntity)
+    public void Remove(Entity thisEntity)
     {
         _entities.Remove(thisEntity);
     }

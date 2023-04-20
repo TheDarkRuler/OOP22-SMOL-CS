@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 public interface IWorld
 {   
-    ConcurrentQueue<IEntity> GetEntities();
+    ConcurrentQueue<Entity> GetEntities();
     
-    void Remove(IEntity thisEntity);
+    void Remove(Entity thisEntity);
 
     int GetScore();
 
-    void AddEntity(IEntity thisEntity);
+    void AddEntity(Entity thisEntity);
     
     void IncScore(int quantity);
 }

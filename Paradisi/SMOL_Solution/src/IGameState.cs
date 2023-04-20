@@ -6,4 +6,6 @@ public interface IGameState
     void InitGame();
 
     int GetScore();
+
+    World GetWorld();
 }
