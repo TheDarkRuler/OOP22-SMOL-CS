@@ -1,12 +1,9 @@
-namespace SMOL_Solution;
-
+namespace MySpace;
 public interface IGameState
 {
-    ///<value>The current world </value>
-    //public World? GetWorld() { get; }
+    bool IsGameOver();
 
-    public Boolean IsGameOver();
+    void InitGame();
 
-    public int getScore();
-
+    int GetScore();
 }
