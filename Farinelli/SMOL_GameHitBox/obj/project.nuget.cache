@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Jo817fdwq1RRy3MJL0Yi9eaLe+ZeqwOgzg38mD7q4CO9mYZXpq3OAqJnwWIZfdQfvYsMz0UG8SjUNmgwJp6EnA==",
+  "dgSpecHash": "05iPHk1JibHPhAauTFTmBWYNgYZtbqrcgy4P2vdBWUvopd4yMdV9ZYwkqk0vHPFeVeaB/h8no4cF7X67iv1eLw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\farin\\OneDrive\\Desktop\\Uni\\SecondoAnno_2\\ProgrammazioneAdOggetti\\Esame\\C#_TRAD\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Drawer2\\OOP\\Progettone\\C#\\OOP22-SMOL-CS\\Farinelli\\SMOL_GameHitBox\\SMOL_GameHitBox.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512"
+  ],
   "logs": []
 }

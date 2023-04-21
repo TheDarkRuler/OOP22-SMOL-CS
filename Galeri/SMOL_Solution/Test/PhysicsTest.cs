@@ -23,6 +23,4 @@ public class PhysicsTest
         test.ReceiveMovement(new PointF(3,4));
         Assert.That(test.GetX(), Is.Not.EqualTo(0));
     }
-    
-    
 }

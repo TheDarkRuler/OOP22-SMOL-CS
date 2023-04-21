@@ -20,13 +20,15 @@ class GameLoop
     int drawCount=0;*/
 
     // Constructor for the GameLoop.
-    public GameLoop(IGameState gameState, IGameViewState gv, IStage view) {
+    public GameLoop(IGameState gameState, IGameViewState gv, IStage view)
+    {
         this._gameState = gameState;
         this._gv = gv;
         this._view = view;
     }
     
-    public void Run() {
+    public void Run()
+    {
         long now;
         long lastFrame = DateTime.Now.Millisecond;
         _pastTime = DateTime.Now.Millisecond;
@@ -59,19 +61,22 @@ class GameLoop
     /**
      * Update the logic of the Game.
      */
-    public void Update() {
+    public void Update()
+    {
         //Update the logic
     }
 
     /**
      * Repaint the Window with the change ocurred by the {@link #update()} method.
      */
-    private void Repaint() {
+    private void Repaint()
+    {
         //Update the graphics
     }
 
     // Synchronize the GameLoop with the desired refresh rating.
-    private bool SyncTime(double interval) {
+    private bool SyncTime(double interval)
+    {
         long currentTime = DateTime.Now.Millisecond;
         _delta += (currentTime - _pastTime) / interval;
         //timer += (currentTime - pastTime);

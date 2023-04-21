@@ -1,6 +1,7 @@
 namespace SMOL_Solution;
 
-public enum Directions {
+public enum Directions
+{
 
     /**
      * The player moves up.
