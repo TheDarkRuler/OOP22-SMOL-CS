@@ -1,4 +1,3 @@
-using System.Collections.Concurrent;
 using smol.stub;
 namespace smol;
 /// <summary>
@@ -10,7 +9,7 @@ public interface IWorld
     /// Getter for the all Entities of type Enemy.
     /// </summary>
     /// <returns>list of enemies.</returns>
-    List<IEntity> GetMoles();
+    IEnumerable<IEntity> GetMoles();
     /// <summary>
     ///  Getter for the Player Entity.
     /// </summary>
@@ -25,7 +24,7 @@ public interface IWorld
     /// Getter for all Entities. 
     /// </summary>
     /// <returns>Entities</returns>
-    LinkedList<IEntity> GetEntities();
+    IEnumerable<IEntity> GetEntities();
     /// <summary>
     /// Removes an Entity. 
     /// </summary>

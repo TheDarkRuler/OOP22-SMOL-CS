@@ -8,7 +8,7 @@ public class HealthComponent
     /// Getter for the current health.
     /// </summary>
     /// <returns>current health</returns>
-    public double GetCurrentHealth()
+    public static double GetCurrentHealth()
     {
         return 50;
     }

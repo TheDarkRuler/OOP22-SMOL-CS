@@ -1,4 +1,3 @@
-using System.Collections.Concurrent;
 using smol.stub;
 namespace smol;
 /// <summary>
@@ -18,12 +17,12 @@ public class WorldImpl : IWorld
     public WorldImpl()
     {
         Entities = new LinkedList<IEntity>();
-        this.OccPlants = new Dictionary<IEntity, bool>();
+        OccPlants = new Dictionary<IEntity, bool>();
         _score = 0;
     }
     
     /// <inheritdoc />
-    public List<IEntity> GetMoles()
+    public IEnumerable<IEntity> GetMoles()
     {
         return Entities.Where(entity => entity.GetType().Equals(EntityType.Enemy)).ToList();
     }
@@ -41,7 +40,7 @@ public class WorldImpl : IWorld
     }
 
     /// <inheritdoc />
-    public LinkedList<IEntity> GetEntities()
+    public IEnumerable<IEntity> GetEntities()
     {
         return Entities;
     }
@@ -67,14 +66,14 @@ public class WorldImpl : IWorld
     /// <inheritdoc />
     public void IncScore(int quantity)
     {
-        _score = _score + quantity;
+        _score += quantity;
     }
 
     /// <inheritdoc />
     public Dictionary<IEntity, bool> OccupiedPlants()
     {
         UpdateLifePlants();
-        return new Dictionary<IEntity, bool>(this.OccPlants);
+        return new Dictionary<IEntity, bool>(OccPlants);
     }
     
     private void UpdateLifePlants()
@@ -88,12 +87,9 @@ public class WorldImpl : IWorld
 
     private void CheckRemoved()
     {
-        foreach (var lifePlant in OccPlants.Keys)
+        foreach (var lifePlant in OccPlants.Keys.Where(lifePlant => !GetLifePlants().Contains(lifePlant)))
         {
-            if (!GetLifePlants().Contains(lifePlant))
-            {
-                OccPlants.Remove(lifePlant);
-            }
+            OccPlants.Remove(lifePlant);
         }
     }
     
@@ -101,19 +97,17 @@ public class WorldImpl : IWorld
     public void SetPlantFree(IEntity plant)
     {
         UpdateLifePlants();
-        if (OccPlants.ContainsKey(plant))
-        {
-            OccPlants.Add(plant,Free);
-        }
+        if (!OccPlants.ContainsKey(plant)) return;
+        OccPlants.Remove(plant);
+        OccPlants.Add(plant, Free);
     }
 
     /// <inheritdoc />
     public void SetPlantOccupied(IEntity plant)
     {
         UpdateLifePlants();
-        if (OccPlants.ContainsKey(plant))
-        {
-            OccPlants.Add(plant,Occupied);
-        }
+        if (!OccPlants.ContainsKey(plant) || OccPlants[plant].Equals(Occupied)) return;
+        OccPlants.Remove(plant);
+        OccPlants.Add(plant, Occupied);
     }
 }

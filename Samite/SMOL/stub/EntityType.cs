@@ -14,12 +14,4 @@ public enum EntityType
     /// The plant entity.
     /// </summary>
     Health,
-    /// <summary>
-    /// The weapon entity.
-    /// </summary>
-    Weapon,
-    /// <summary>
-    /// The wall entity.
-    /// </summary>
-    Wall
 }

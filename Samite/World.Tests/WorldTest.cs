@@ -1,6 +1,10 @@
+using System;
+using System.Linq;
 using Xunit;
 using smol;
 using smol.stub;
+using Xunit.Abstractions;
+
 namespace World.Tests;
 
 /// <summary>
@@ -8,6 +12,13 @@ namespace World.Tests;
 /// </summary>
 public class WorldTest
 {
+    private readonly ITestOutputHelper _testOutputHelper;
+    private int _freePlants = 0;
+
+    public WorldTest(ITestOutputHelper testOutputHelper)
+    {
+        _testOutputHelper = testOutputHelper;
+    }
 
     [Fact]
     public void EmptyWorldTesting()
@@ -63,5 +74,28 @@ public class WorldTest
         {
             Assert.Contains(lifePlant, world.OccupiedPlants().Keys);
         }
+        world.SetPlantOccupied(plant1);
+        Assert.Equal(3, CountFreePlants(world));
+        world.SetPlantOccupied(new EntityImpl(EntityType.Health, new HealthComponent()));
+        Assert.Equal(3, CountFreePlants(world));
+        world.SetPlantFree(plant1);
+        Assert.Equal(4, CountFreePlants(world));
+    }
+
+    /// <summary>
+    /// Counter of free plants
+    /// </summary>
+    /// <param name="currentWorld">
+    /// current world where i want to find the number of free plants
+    /// </param>
+    /// <returns>free plants</returns>
+    private int CountFreePlants(IWorld currentWorld)
+    {
+        _freePlants = 0;
+        foreach (var occupied in currentWorld.OccupiedPlants().Values.Where(occupied => !occupied))
+        {
+            _freePlants++;
+        }
+        return _freePlants;
     }
 }
