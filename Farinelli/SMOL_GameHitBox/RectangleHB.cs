@@ -1,53 +1,49 @@
-namespace SMOL_GameHitBox;
+namespace GameHitBox;
 
+///<summary>
+///HitBox made for the objects with a rectangular shape.
+///</summary>
 public class RectangleHB : IHitBox
 {
     private Point2D _center;
-    private readonly double _width;
-    private readonly double _height;
+    private double _width;
+    private double _height;
+
+    ///<summary>
+    ///Constructor that sets the dimension and location of the hitbox.
+    ///</summary>
+    ///<param name = "center"> The center of the hitbox. </param>
+    ///<param name = "width"> The width of the hitbox. </param>
+    ///<param name = "height"> The height of the hitbox. </param>
     public RectangleHB(Point2D center, double width, double height)
     {
         _center = center;
         _height = height;
         _width = width;
     }
-    public Point2D GetCenter()
-    {
-        return _center;
-    }
+    ///<summary>
+    ///Get the width of the hitbox.
+    ///</summary>
+    public double Width => _width;
 
-    public double GetWidth()
-    {
-        return _width;
-    }
+    ///<summary>
+    ///Get the height of the hitbox.
+    ///</summary>
+    public double Height => _height;
 
-    public double GetHeight()
-    {
-        return _height;
-    }
+    ///<inheritdoc />
+    public Point2D Center { get => _center; set => _center = value; }
 
-    public Point2D GetEdge() {
-        return new Point2D(_center.GetX() - (_width / 2), _center.GetY() - (_height / 2));
-    }
+    public Point2D Edge => new Point2D(_center.X - (_width / 2), _center.Y - (_height / 2));
 
-    public bool IsColliding(IHitBox hitBox)
-    {
-        return hitBox.IsColliding(this);
-    }
+    ///<inheritdoc />
+    public bool IsColliding(IHitBox hitBox) => hitBox.IsColliding(this);
 
-    public bool IsColliding(CircleHB circle)
-    {
-        return circle.IsColliding(this);
-    }
+    ///<inheritdoc />
+    public bool IsColliding(CircleHB circle) => circle.IsColliding(this);
 
-    public bool IsColliding(RectangleHB rectangle)
-    {
-        return Math.Abs(_center.GetX() - rectangle.GetCenter().GetX()) <= (_width + rectangle.GetWidth()) / 2
-            && Math.Abs(_center.GetY() - rectangle.GetCenter().GetY()) <= (_height + rectangle.GetHeight()) / 2;
-    }
-
-    public void SetCenter(Point2D newCenter)
-    {
-        _center = newCenter;
-    }
+    ///<inheritdoc />
+    public bool IsColliding(RectangleHB rectangle) => Math.Abs(_center.X - rectangle.Center.X) 
+            <= (_width + rectangle.Width) / 2 && Math.Abs(_center.Y - rectangle.Center.Y) 
+            <= (_height + rectangle.Height) / 2;
 }

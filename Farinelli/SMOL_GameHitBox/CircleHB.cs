@@ -1,57 +1,43 @@
-namespace SMOL_GameHitBox;
+namespace GameHitBox;
 
+///<summary>
+///HitBox made for the objects with a circular shape.
+///</summary>
 public class CircleHB : IHitBox
 {
 
     private Point2D _center;
-    private readonly float _radius;
-    public CircleHB(Point2D center, float radius) 
+    private double Radius { get; }
+
+    ///<summary>
+    ///Sets the center and the radius of the HitBox.
+    ///</summary>
+    ///<param name = "center"> The center of the hitbox. </param>
+    ///<param name = "radius"> Radius of the hitbox. </param>
+    public CircleHB(Point2D center, double radius) 
     {
         _center = center;
-        _radius = radius;
-    }
-    public Point2D GetCenter()
-    {
-        return _center;
+        Radius = radius;
     }
 
-    public bool IsColliding(IHitBox hitBox)
-    {
-        return hitBox.IsColliding(this);
-    }
+    ///<inheritdoc />
+    public Point2D Center { get => _center; set => _center = value; }
 
-    public bool IsColliding(CircleHB circle)
-    {
-        return _center.Distance(circle._center) <= _radius + circle._radius;
-    }
+    ///<inheritdoc />
+    public bool IsColliding(IHitBox hitBox) => hitBox.IsColliding(this);
 
-    public bool IsColliding(RectangleHB rectangle)
-    {
-        return _radius >= Math.Sqrt(Math.Pow(DistanceX(rectangle), 2) + Math.Pow(DistanceY(rectangle), 2));
-    }
+    ///<inheritdoc />
+    public bool IsColliding(CircleHB circle) => _center.Distance(circle._center) <= Radius + circle.Radius;
 
-    private double DistanceX(RectangleHB rectangle)
-    {
-        if (_center.GetX() < (rectangle.GetEdge().GetX() + rectangle.GetWidth()))
-        {
-            return _center.GetX() - Math.Max(_center.GetX(), rectangle.GetEdge().GetX());
-        }
-        return _center.GetX() - Math.Max(rectangle.GetEdge().GetX() + rectangle.GetWidth(),
-            rectangle.GetEdge().GetX());
-    }
+    ///<inheritdoc />
+    public bool IsColliding(RectangleHB rectangle) => Radius >= Math.Sqrt(Math.Pow(DistanceX(rectangle), 2) 
+        + Math.Pow(DistanceY(rectangle), 2));
+
+    private double DistanceX(RectangleHB rectangle) => _center.X < (rectangle.Edge.X + rectangle.Width) ?
+        _center.X - Math.Max(_center.X, rectangle.Edge.X) :
+        _center.X - Math.Max(rectangle.Edge.X + rectangle.Width, rectangle.Edge.X);
     
-    private double DistanceY(RectangleHB rectangle)
-    {
-        if (_center.GetY() < (rectangle.GetEdge().GetY() + rectangle.GetHeight()))
-        {
-            return _center.GetY() - Math.Max(_center.GetY(), rectangle.GetEdge().GetY());
-        }
-        return _center.GetY() - Math.Max(rectangle.GetEdge().GetY() + rectangle.GetHeight(),
-            rectangle.GetEdge().GetY());
-    }
-
-    public void SetCenter(Point2D newCenter)
-    {
-        _center = newCenter;
-    }
+    private double DistanceY(RectangleHB rectangle) => _center.Y < (rectangle.Edge.Y + rectangle.Height) ?
+        _center.Y - Math.Max(_center.Y, rectangle.Edge.Y) :
+        _center.Y - Math.Max(rectangle.Edge.Y + rectangle.Height, rectangle.Edge.Y);
 }
